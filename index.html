@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Büşra Ay | Computer Engineer Candidate</title>
 
-    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
@@ -16,6 +14,7 @@
             background-color: #0f172a; 
             color: #f1f5f9; 
             font-family: 'Inter', sans-serif; 
+            scroll-behavior: smooth;
         }
 
         .nav-link { 
@@ -44,9 +43,13 @@
     </style>
 </head>
 
-<body class="min-h-screen flex flex-col justify-center items-center p-6">
+<body class="min-h-screen flex flex-col items-center p-6">
 
-    <!-- Navigation -->
+    <header class="text-center mt-12 mb-8">
+        <h1 class="text-xl font-bold tracking-widest uppercase">Büşra Ay Portfolio</h1>
+        <p class="text-slate-500 italic text-sm mt-2">Engineered across disciplines</p>
+    </header>
+
     <nav class="mb-12">
         <ul class="flex space-x-8 text-sm font-medium tracking-widest uppercase">
             <li><a href="index.html" class="nav-link active">Ana Sayfa</a></li>
@@ -56,14 +59,21 @@
         </ul>
     </nav>
 
-    <!-- Main Content -->
     <main class="text-center max-w-2xl fade-in">
+        
+        <p class="text-indigo-400 text-sm font-medium mb-4">Dijital dünyama hoş geldiniz.</p>
 
-        <h1 class="text-5xl md:text-6xl font-bold mb-6 tracking-tighter">
+        <h2 class="text-5xl md:text-6xl font-bold mb-6 tracking-tighter">
             Büşra <span class="text-slate-500">Ay</span>
-        </h1>
+        </h2>
 
-        <p class="text-lg text-slate-400 leading-relaxed mb-10">
+        <div class="mb-10">
+            <a href="#vizyon" class="text-xs text-slate-500 hover:text-white border border-slate-700 px-4 py-2 rounded-full transition-all">
+                Vizyonum ↓
+            </a>
+        </div>
+
+        <p id="vizyon" class="text-lg text-slate-400 leading-relaxed mb-10">
             Tekstil mühendisliği temeli üzerine 
             <span class="text-white font-medium">bilgisayar mühendisliği vizyonu</span> 
             inşa eden, disiplinler arası düşünebilen bir geliştiriciyim.
@@ -84,8 +94,7 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="mt-20 text-slate-600 text-[10px] uppercase tracking-widest text-center">
+    <footer class="mt-20 py-10 text-slate-600 text-[10px] uppercase tracking-widest text-center">
         &copy; 2026 Büşra Ay <br>
         engineered across disciplines
     </footer>
