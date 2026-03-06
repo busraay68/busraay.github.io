@@ -4,99 +4,182 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Büşra Ay | Computer Engineer Candidate</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
+    
     <style>
-        body { 
+        /* 1. Grup Seçici (Ödev Gereksinimi) */
+        h1, h2, p, a, li {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+        }
+
+        body {
             background-color: #0f172a; 
             color: #f1f5f9; 
-            font-family: 'Inter', sans-serif; 
-            scroll-behavior: smooth;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            min-height: 100vh;
+            box-sizing: border-box;
         }
 
-        .nav-link { 
-            transition: all 0.3s ease; 
-            border-bottom: 1px solid transparent; 
+        .container {
+            width: 100%;
+            max-width: 900px;
         }
 
-        .nav-link:hover { 
+        /* --- HEADER ALANI --- */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        header p {
+            color: #64748b; 
+            font-style: italic;
+            font-size: 14px;
+            margin-bottom: 40px;
+        }
+
+        /* 2. Hiyerarşik Seçici (Ödev Gereksinimi) */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Menüyü yatay yapma (Ödev Gereksinimi) */
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        /* 3. Hiyerarşik Seçici ve Hover Efekti */
+        nav ul li a {
+            color: #f1f5f9;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
             color: #818cf8; 
-            border-color: #818cf8; 
-        }
-
-        .active {
-            color: #818cf8;
             border-color: #818cf8;
         }
 
-        .fade-in {
+        /* --- İÇERİK ALANI (MAIN) --- */
+        main {
+            /* Kutuları yan yana getirme (Ödev Gereksinimi) */
+            display: flex; 
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 60px;
             animation: fadeIn 1.2s ease-in-out forwards;
-            opacity: 0;
+        }
+
+        .box {
+            width: 48%; 
+            background-color: #1e293b; 
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+        }
+
+        .box h2 {
+            font-size: 18px;
+            color: #818cf8;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 10px;
+        }
+
+        /* Metin Özellikleri (Ödev Gereksinimi: font-size, color, line-height, text-align) */
+        .box p {
+            font-size: 15px;
+            color: #cbd5e1; 
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        /* Kutulardaki son paragrafların alt boşluğunu sıfırlama */
+        .box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* --- FOOTER ALANI --- */
+        footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            margin-top: auto;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        footer p {
+            color: #64748b;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         @keyframes fadeIn {
-            to { opacity: 1; }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
+<body>
 
-<body class="min-h-screen flex flex-col items-center p-6">
+    <div class="container">
+        <header>
+            <h1>Büşra Ay Portfolio</h1>
+            <p>Engineered across disciplines</p>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Ana Sayfa</a></li>
+                    <li><a href="about.html">Hakkımda</a></li>
+                    <li><a href="interests.html">İlgi Alanları</a></li>
+                    <li><a href="contact.html">İletişim</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <header class="text-center mt-12 mb-8">
-        <h1 class="text-xl font-bold tracking-widest uppercase">Büşra Ay Portfolio</h1>
-        <p class="text-slate-500 italic text-sm mt-2">Engineered across disciplines</p>
-    </header>
+        <main>
+            <div class="box">
+                <h2>Vizyonum</h2>
+                <p>Tekstil mühendisliği temeli üzerine bilgisayar mühendisliği vizyonu inşa eden, disiplinler arası düşünebilen bir geliştiriciyim. Analitik yaklaşımımı her iki disiplinle harmanlıyorum.</p>
+                <p>Özellikle gömülü sistemler, görüntü işleme ve sistem programlama alanlarında çalışıyor, donanım ile yazılımın kesiştiği noktalarda yenilikçi çözümler üretmeyi hedefliyorum.</p>
+            </div>
 
-    <nav class="mb-12">
-        <ul class="flex space-x-8 text-sm font-medium tracking-widest uppercase">
-            <li><a href="index.html" class="nav-link active">Ana Sayfa</a></li>
-            <li><a href="about.html" class="nav-link">Hakkımda</a></li>
-            <li><a href="interests.html" class="nav-link">İlgi Alanları</a></li>
-            <li><a href="contact.html" class="nav-link">İletişim</a></li>
-        </ul>
-    </nav>
+            <aside class="box">
+                <h2>Odak Alanlarım</h2>
+                <p>Kişisel gelişimimde ve projelerimde <strong>Embedded Systems</strong>, <strong>Computer Vision</strong> ve <strong>System Programming</strong> konuları öncelikli ilgi alanlarımı oluşturuyor.</p>
+                <p>Dijital dünyama hoş geldiniz. Tasarladığım bu portfolyo sayfası üzerinden güncel yeteneklerime ve teknik vizyonuma dair fikir edinebilirsiniz.</p>
+            </aside>
+        </main>
+    </div>
 
-    <main class="text-center max-w-2xl fade-in">
-        
-        <p class="text-indigo-400 text-sm font-medium mb-4">Dijital dünyama hoş geldiniz.</p>
-
-        <h2 class="text-5xl md:text-6xl font-bold mb-6 tracking-tighter">
-            Büşra <span class="text-slate-500">Ay</span>
-        </h2>
-
-        <div class="mb-10">
-            <a href="#vizyon" class="text-xs text-slate-500 hover:text-white border border-slate-700 px-4 py-2 rounded-full transition-all">
-                Vizyonum ↓
-            </a>
-        </div>
-
-        <p id="vizyon" class="text-lg text-slate-400 leading-relaxed mb-10">
-            Tekstil mühendisliği temeli üzerine 
-            <span class="text-white font-medium">bilgisayar mühendisliği vizyonu</span> 
-            inşa eden, disiplinler arası düşünebilen bir geliştiriciyim.
-            Gömülü sistemler, görüntü işleme ve sistem programlama alanlarında çalışıyorum.
-        </p>
-
-        <div class="flex justify-center flex-wrap gap-4">
-            <span class="px-4 py-2 bg-slate-800 rounded-full text-xs font-semibold tracking-wide">
-                EMBEDDED SYSTEMS
-            </span>
-            <span class="px-4 py-2 bg-slate-800 rounded-full text-xs font-semibold tracking-wide">
-                COMPUTER VISION
-            </span>
-            <span class="px-4 py-2 bg-slate-800 rounded-full text-xs font-semibold tracking-wide">
-                SYSTEM PROGRAMMING
-            </span>
-        </div>
-
-    </main>
-
-    <footer class="mt-20 py-10 text-slate-600 text-[10px] uppercase tracking-widest text-center">
-        &copy; 2026 Büşra Ay <br>
-        engineered across disciplines
+    <footer>
+        <p>&copy; 2026 Büşra Ay <br><br> engineered across disciplines</p>
     </footer>
 
 </body>
