@@ -4,7 +4,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Lab 2 - Uygulama</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Grup Seçici - Birden fazla etikete aynı stil */
+        h1, h2, h3, p {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.8;
+            margin: 10px 0;
+        }
+
+        /* ===== MENÜ STİLLERİ ===== */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            background-color: #333;
+            padding: 15px 0;
+        }
+
+        /* Yatay menü için inline-block kullanımı */
+        nav ul li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        /* Hiyerarşik Seçici - Menü linkleri */
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover efekti */
+        nav ul li a:hover {
+            color: #ffd700;
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        /* ===== HEADER STİLLERİ ===== */
+        header {
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 30px 20px;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            color: #333;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* ===== İKİ SÜTUNLU DÜZEN ===== */
+        .container {
+            display: flex;
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 30px 20px;
+        }
+
+        /* Sol içerik alanı */
+        .content {
+            flex: 2;
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Hiyerarşik Seçici - content içindeki p etiketleri */
+        .content p {
+            font-size: 16px;
+            color: #222;
+            text-align: justify;
+            margin-bottom: 15px;
+            padding: 0 10px;
+        }
+
+        .content h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        /* Sağ yan menü alanı */
+        .sidebar {
+            flex: 1;
+            background-color: #e9ecef;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* sidebar içindeki p etiketleri */
+        .sidebar p {
+            font-size: 15px;
+            color: #444;
+            text-align: left;
+            line-height: 1.6;
+            background-color: white;
+            padding: 12px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            border-left: 4px solid #e74c3c;
+            padding-left: 15px;
+        }
+
+        /* ===== FOOTER STİLLERİ ===== */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: white;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+
+        footer p {
+            color: #ecf0f1;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive tasarım - ekran küçülünce sütunlar alt alta gelsin */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Yatay Menü -->
