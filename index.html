@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* 1. Grup Seçici  */
+        /* --- MEVCUT STİLLERİN --- */
         h1, h2, p, a, li {
             font-family: 'Inter', sans-serif;
             margin: 0;
@@ -30,7 +30,6 @@
             max-width: 900px;
         }
 
-        /* --- HEADER ALANI --- */
         header {
             text-align: center;
             margin-bottom: 50px;
@@ -52,20 +51,17 @@
             margin-bottom: 40px;
         }
 
-        /* 2. Hiyerarşik Seçici  */
         nav ul {
             list-style: none;
             padding: 0;
             text-align: center;
         }
 
-        /* Menüyü yatay yapma  */
         nav ul li {
             display: inline-block;
             margin: 0 15px;
         }
 
-        /* 3. Hiyerarşik Seçici ve Hover Efekti */
         nav ul li a {
             color: #f1f5f9;
             text-decoration: none;
@@ -83,13 +79,11 @@
             border-color: #818cf8;
         }
 
-        /* --- İÇERİK ALANI (MAIN) --- */
         main {
-            /* Kutuları yan yana getirme (Ödev Gereksinimi) */
             display: flex; 
             justify-content: space-between;
             gap: 20px;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             animation: fadeIn 1.2s ease-in-out forwards;
         }
 
@@ -109,7 +103,6 @@
             padding-bottom: 10px;
         }
 
-        /* Metin Özellikleri  */
         .box p {
             font-size: 15px;
             color: #cbd5e1; 
@@ -118,19 +111,103 @@
             margin-bottom: 15px;
         }
 
-        /* Kutulardaki son paragrafların alt boşluğunu sıfırlama */
-        .box p:last-child {
-            margin-bottom: 0;
+        /* --- YENİ İLETİŞİM FORMU STİLLERİ --- */
+        
+        /* Form Konteynırı [cite: 7, 14, 16] */
+        .contact-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 40px auto; /* Ortalamak için margin:auto [cite: 14] */
+            padding: 30px; /* İç boşluk [cite: 15] */
+            background-color: #1e293b;
+            border: 1px solid #334155; /* Belirgin kenarlık [cite: 16] */
+            border-radius: 12px; /* Köşe yuvarlama [cite: 16] */
+            box-sizing: border-box;
         }
 
-        /* --- FOOTER ALANI --- */
+        .contact-container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #ffffff;
+            font-size: 22px;
+        }
+
+        .contact-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        /* Çoklu Seçici Kullanımı (Input, Select, Textarea) [cite: 17, 22] */
+        .contact-container input[type="text"],
+        .contact-container input[type="email"],
+        .contact-container input[type="password"],
+        .contact-container select,
+        .contact-container textarea {
+            width: 100%; /* Tam genişlik [cite: 18] */
+            padding: 12px; /* Ferah durması için iç boşluk [cite: 19] */
+            margin-bottom: 20px; /* Elemanlar arası boşluk [cite: 20] */
+            background-color: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 6px;
+            color: #f1f5f9;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        /* Radio ve Checkbox Alanları */
+        .selection-group {
+            background-color: #0f172a;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .selection-group div {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        /* Buton Grubu [cite: 21, 47, 48] */
+        .button-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 12px 20px; /* Büyütülmüş padding [cite: 21] */
+            border: none; /* Kenarlık kaldırıldı [cite: 21] */
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .btn-submit {
+            background-color: #2563eb; /* Gönder butonu mavi [cite: 21, 47] */
+            color: white;
+        }
+
+        .btn-clear {
+            background-color: #dc2626; /* Temizle butonu kırmızı [cite: 48] */
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
         footer {
             text-align: center;
-            padding-top: 20px;
+            padding: 40px 0;
             border-top: 1px solid #334155;
-            margin-top: auto;
+            margin-top: 50px;
             width: 100%;
-            max-width: 900px;
         }
 
         footer p {
@@ -176,7 +253,59 @@
                 <p>Dijital dünyama hoş geldiniz. Tasarladığım bu portfolyo sayfası üzerinden güncel yeteneklerime ve teknik vizyonuma dair fikir edinebilirsiniz.</p>
             </aside>
         </main>
-    </div>
+
+        <section class="contact-container">
+            <h2>Detaylı İletişim Formu</h2>
+            <form action="#">
+                <label for="fullname">Ad Soyad:</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Örn: Asaf Karataş" required>
+
+                <label for="email">E-posta Adresi:</label>
+                <input type="email" id="email" name="email" placeholder="ornek@mail.com" required>
+
+                <label for="password">Başvuru Takip Şifresi:</label>
+                <input type="password" id="password" name="password" placeholder="Şifrenizi girin">
+
+                <label>İletişim Tercihi:</label>
+                <div class="selection-group">
+                    <div>
+                        <input type="radio" id="mail-pref" name="contact-pref" value="mail" checked>
+                        <label for="mail-pref" style="margin:0;">Bana e-posta ile ulaşın</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="phone-pref" name="contact-pref" value="phone">
+                        <label for="phone-pref" style="margin:0;">Bana telefonla ulaşın</label>
+                    </div>
+                </div>
+
+                <label>İlgi Alanları / Yetenekler:</label>
+                <div class="selection-group">
+                    <div><input type="checkbox" id="html" name="skills" value="html"> <label for="html" style="margin:0;">HTML</label></div>
+                    <div><input type="checkbox" id="css" name="skills" value="css"> <label for="css" style="margin:0;">CSS</label></div>
+                    <div><input type="checkbox" id="algo" name="skills" value="algo"> <label for="algo" style="margin:0;">Algoritma</label></div>
+                </div>
+
+                <label for="subject">Konu:</label>
+                <select id="subject" name="subject">
+                    <option value="" disabled selected>Lütfen bir konu seçin...</option>
+                    <option value="job">İş Teklifi</option>
+                    <option value="question">Soru</option>
+                    <option value="feedback">Geri Bildirim</option>
+                </select>
+
+                <label for="file">Özgeçmiş (CV) veya Fotoğraf Yükle:</label>
+                <input type="file" id="file" name="file">
+
+                <label for="message">Mesajınız:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Detaylı mesajınızı buraya yazabilirsiniz..."></textarea>
+
+                <div class="button-group">
+                    <button type="submit" class="btn btn-submit">Gönder</button>
+                    <button type="reset" class="btn btn-clear">Temizle</button>
+                </div>
+            </form>
+        </section>
+        </div>
 
     <footer>
         <p>&copy; 2026 Büşra Ay <br><br> engineered across disciplines</p>
@@ -184,4 +313,3 @@
 
 </body>
 </html>
-
