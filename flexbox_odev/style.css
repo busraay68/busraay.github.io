@@ -115,3 +115,13 @@
     background-color: #222;
     color: white;
 }
+/* Logo Görselinin Boyutunu Sınırlama */
+.logo img {
+    /* Navbar'ın yüksekliği 10vh. Logonun sığması için 
+       onun yüksekliğini en fazla 8vh (viewport height) yapıyoruz. */
+    max-height: 8vh; 
+    
+    /* Genişliği otomatik bırakıyoruz ki logonun 
+       en-boy oranı bozulmasın, yayvan durmasın. */
+    width: auto;     
+}
