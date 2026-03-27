@@ -1,1 +1,117 @@
+/* Genel Sıfırlama */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* GENEL ZORUNLU ŞART */
+.wrapper {
+    display: flex;
+    flex-direction: column; /* Dikey yerleşim */
+    height: 100vh; /* Ekran yüksekliğine sığma */
+}
+
+/* 1) NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Solda logo sağda linkler */
+    align-items: center;
+    height: 10vh;
+    background-color: #333;
+    color: white;
+    padding: 0 20px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* 2) HERO (İki Kolon) */
+.hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch; /* Görsel kutusu yüksekliği esner */
+    height: 30vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.hero-content {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.hero-placeholder {
+    flex-basis: 45%;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #999;
+}
+
+/* 3) KARTLAR BÖLÜMÜ */
+.cards {
+    display: flex;
+    flex-wrap: wrap; /* Sığmazsa alt satıra geçer */
+    gap: 10px; /* Gap kullanımı */
+    height: 30vh;
+    padding: 20px;
+    background-color: #ddd;
+    align-content: center;
+    justify-content: center;
+}
+
+.card {
+    background-color: #555;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 calc(33.333% - 10px); /* 3 sütunlu yapı */
+    height: 40%;
+}
+
+/* 4) FLEX GROW UYGULAMA */
+.grow-section {
+    display: flex;
+    align-items: stretch; /* Yükseklik esner */
+    height: 20vh;
+    background-color: #eee;
+    padding: 10px 20px;
+    gap: 10px;
+}
+
+.box1, .box2, .box3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.box1 { flex-grow: 1; background-color: #e74c3c; } /* Kutu 1 */
+.box2 { flex-grow: 2; background-color: #2980b9; } /* Kutu 2 (2 kat büyür) */
+.box3 { flex-grow: 1; background-color: #e74c3c; } /* Kutu 3 */
+
+/* 5) FOOTER */
+.footer {
+    display: flex;
+    justify-content: center; /* Yatay ortalama */
+    align-items: center; /* Dikey ortalama */
+    height: 10vh;
+    background-color: #222;
+    color: white;
+}
