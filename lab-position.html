@@ -53,12 +53,8 @@ body {
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
-/* BAŞLIK */
 .card h1 {
-    font-size: 34px;
-    color: #1e3a8a;
     position: relative;
-    z-index: 1; /* 18. Kural: z-index (Altta) */
 }
 
 /* AÇIKLAMA */
@@ -80,26 +76,25 @@ body {
     transition: 0.3s ease;
 }
 
-/* 🔥 ÜCRETSİZ — BAŞLIĞIN ÜSTÜNE BİNEN (Konum Korundu) */
 .badge1 {
-    top: 65px;   
-    left: 80px;  
+    position: absolute;
+    top: 20px;     /* BAŞLIĞA GÖRE */
+    left: 140px;   /* CHAT üstüne getir */
+
     background: #fbbf24;
     color: #78350f;
-    cursor: copy; /* 13. Kural: cursor değişimi (2) */
-}
 
-.badge1:hover {
-    transform: scale(1.1) rotate(-3deg); /* Hover animasyonu */
+    transform: translateY(-50%);
 }
-
-/* TARİH (Konum Korundu) */
 .badge2 {
-    top: 65px;   
-    right: 30px;
+    position: absolute;
+    top: 20px;     /* AYNI HİZA */
+    right: 40px;
+
     background: #dcfce7;
     color: #166534;
-    cursor: help; /* 13. Kural: cursor değişimi (3) */
+
+    transform: translateY(-50%);
 }
 
 .badge2:hover {
