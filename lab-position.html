@@ -76,25 +76,38 @@ body {
     transition: 0.3s ease;
 }
 
+/* 🔥 ÜCRETSİZ */
 .badge1 {
     position: absolute;
-    top: 20px;     /* BAŞLIĞA GÖRE */
-    left: 140px;   /* CHAT üstüne getir */
+    top: 85px;   /* İKİSİ DE AYNI */
+    left: 80px;
 
     background: #fbbf24;
     color: #78350f;
 
-    transform: translateY(-50%);
+    transform: translateY(-50%); /* kritik */
+    cursor: copy;
 }
+
+.badge1:hover {
+    transform: translateY(-50%) scale(1.1) rotate(-3deg);
+}
+
+/* 📅 TARİH */
 .badge2 {
     position: absolute;
-    top: 20px;     /* AYNI HİZA */
-    right: 40px;
+    top: 85px;   /* AYNI DEĞER */
+    right: 30px;
 
     background: #dcfce7;
     color: #166534;
 
-    transform: translateY(-50%);
+    transform: translateY(-50%); /* kritik */
+    cursor: help;
+}
+
+.badge2:hover {
+    background: #bbf7d0;
 }
 
 .badge2:hover {
