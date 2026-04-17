@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birim Dönüştürücü</title>
+    <style>
+        /* Renk Değişimini Buradan Yapabilirsin */
+        :root {
+            --bg-color: #fefcbf;       /* Arka plan: Çok açık sarı */
+            --card-bg: #ffffff;        /* Kart içi: Beyaz */
+            --primary-color: #f6e05e;  /* Buton ve kenarlık: Canlı sarı */
+            --hover-color: #ecc94b;    /* Buton üzerine gelince: Koyu sarı */
+            --text-color: #744210;     /* Yazı rengi: Kahverengi tonu */
+            --result-bg: #fffaf0;      /* Sonuç kutusu: Krem */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 380px;
+            text-align: center;
+        }
+
+        h2 { margin-bottom: 20px; font-weight: 700; }
+
+        .group { text-align: left; margin-bottom: 15px; }
+
+        label { display: block; margin-bottom: 5px; font-size: 13px; font-weight: bold; opacity: 0.8; }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            box-sizing: border-box;
+            outline: none;
+            background: #fff;
+            color: var(--text-color);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover { background-color: var(--hover-color); }
+
+        .result-box {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: var(--result-bg);
+            border: 1px dashed var(--hover-color);
+            border-radius: 10px;
+            display: none;
+            font-weight: bold;
+        }
+
+        .back-link {
+            margin-top: 25px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 14px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Birim Dönüştürücü</h2>
+    
+    <div class="group">
+        <label>Değer Giriniz</label>
+        <input type="number" id="val" placeholder="Örn: 100" oninput="calculate()">
+    </div>
+
+    <div class="group">
+        <label>Dönüşüm Tipi</label>
+        <select id="type" onchange="calculate()">
+            <optgroup label="Sıcaklık">
+                <option value="cToF">Celsius → Fahrenheit</option>
+                <option value="cToK">Celsius → Kelvin</option>
+            </optgroup>
+            <optgroup label="Uzunluk">
+                <option value="mToKm">Metre → Kilometre</option>
+                <option value="mToMile">Metre → Mil</option>
+                <option value="inToCm">İnç → Santimetre</option>
+            </optgroup>
+            <optgroup label="Ağırlık">
+                <option value="kgToGr">Kilogram → Gram</option>
+                <option value="kgToLb">Kilogram → Libre (Lb)</option>
+                <option value="ozToGr">Ons → Gram</option>
+            </optgroup>
+            <optgroup label="Hız & Basınç">
+                <option value="kmhToMs">km/h → m/s</option>
+                <option value="psiToBar">PSI → Bar</option>
+                <option value="barToAtm">Bar → Atmosfer (atm)</option>
+            </optgroup>
+            <optgroup label="Enerji & Güç">
+                <option value="jToCal">Joule → Kalori</option>
+                <option value="kWToHP">Kilowatt → Beygir (HP)</option>
+                <option value="kWhToBTU">kWh → BTU</option>
+            </optgroup>
+        </select>
+    </div>
+
+    <div id="resBox" class="result-box">
+        Sonuç: <span id="resText"></span>
+    </div>
+</div>
+
+<a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+
+<script>
+    function calculate() {
+        const input = document.getElementById('val').value;
+        const type = document.getElementById('type').value;
+        const resBox = document.getElementById('resBox');
+        const resText = document.getElementById('resText');
+
+        if (input === "") {
+            resBox.style.display = "none";
+            return;
+        }
+
+        const v = parseFloat(input);
+        let r = 0;
+
+        // Dönüşüm Formülleri
+        switch(type) {
+            case "cToF": r = (v * 9/5) + 32; break;
+            case "cToK": r = v + 273.15; break;
+            case "mToKm": r = v / 1000; break;
+            case "mToMile": r = v * 0.00062137; break;
+            case "inToCm": r = v * 2.54; break;
+            case "kgToGr": r = v * 1000; break;
+            case "kgToLb": r = v * 2.20462; break;
+            case "ozToGr": r = v * 28.3495; break;
+            case "kmhToMs": r = v / 3.6; break;
+            case "psiToBar": r = v * 0.068947; break;
+            case "barToAtm": r = v * 0.98692; break;
+            case "jToCal": r = v / 4.184; break;
+            case "kWToHP": r = v * 1.34102; break;
+            case "kWhToBTU": r = v * 3412.14; break;
+        }
+
+        resText.innerText = r.toLocaleString('tr-TR', { maximumFractionDigits: 4 });
+        resBox.style.display = "block";
+    }
+</script>
+
+</body>
+</html>
