@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğrenci Not Hesaplama</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f0f4f8; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; flex-direction: column; }
+        .container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); width: 350px; }
+        h2 { color: #5a67d8; text-align: center; }
+        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #e2e8f0; border-radius: 8px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background-color: #a3bffa; border: none; border-radius: 8px; color: #2d3748; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        button:hover { background-color: #7f9cf5; }
+        #result { margin-top: 20px; padding: 15px; border-radius: 8px; display: none; background-color: #edf2f7; }
+        .back-link { margin-top: 20px; text-decoration: none; color: #5a67d8; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Not Hesaplama</h2>
+    <input type="text" id="name" placeholder="Ad Soyad">
+    <input type="number" id="vize" placeholder="Vize Notu">
+    <input type="number" id="final" placeholder="Final Notu">
+    <button onclick="hesapla()">Hesapla</button>
+
+    <div id="result">
+        <strong id="resName"></strong><br>
+        Ortalama: <span id="resOrt"></span><br>
+        Harf Notu: <span id="resHarf"></span><br>
+        Durum: <span id="resDurum"></span>
+    </div>
+</div>
+
+<a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+
+<script>
+    function hesapla() {
+        const ad = document.getElementById('name').value;
+        const vize = parseFloat(document.getElementById('vize').value);
+        const final = parseFloat(document.getElementById('final').value);
+        
+        if(!ad || isNaN(vize) || isNaN(final)) { alert("Lütfen tüm alanları doldurun!"); return; }
+
+        const ortalama = (vize * 0.4) + (final * 0.6);
+        let harf = "";
+        
+        if (ortalama >= 90) harf = "AA";
+        else if (ortalama >= 80) harf = "BA";
+        else if (ortalama >= 70) harf = "BB";
+        else if (ortalama >= 60) harf = "CB";
+        else if (ortalama >= 50) harf = "CC";
+        else harf = "FF";
+
+        const durum = ortalama >= 50 ? "Geçti" : "Kaldı";
+
+        document.getElementById('resName').innerText = ad;
+        document.getElementById('resOrt').innerText = ortalama.toFixed(2);
+        document.getElementById('resHarf').innerText = harf;
+        document.getElementById('resDurum').innerText = durum;
+        document.getElementById('result').style.display = "block";
+    }
+</script>
+
+</body>
+</html>
