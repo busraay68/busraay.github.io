@@ -42,7 +42,7 @@ body {
     justify-content: space-between;
     align-items: center;
     min-height: 56%;
-    padding: 0.9vh 2vw;
+    padding: 0.55vh 1.6vw;
 }
 
 .nav-meta,
@@ -57,7 +57,7 @@ body {
 
 .nav-meta {
     min-height: 44%;
-    padding: 0.75vh 1.6vw;
+    padding: 0.35vh 1.4vw;
     border-top: 1px solid rgba(23, 35, 60, 0.08);
     align-items: center;
 }
@@ -70,7 +70,7 @@ body {
 }
 
 .logo img {
-    max-height: 6.4vh;
+    max-height: 4.8vh;
     width: auto;
     object-fit: contain;
 }
@@ -79,13 +79,13 @@ body {
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 1.6rem;
+    gap: 1rem;
 }
 
 .nav-links a {
     text-decoration: none;
     color: #253556;
-    font-size: 0.96rem;
+    font-size: 0.82rem;
     font-weight: 600;
     transition: color 0.25s ease;
 }
@@ -98,13 +98,13 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 1.9rem;
-    padding: 0.2rem 0.9rem;
+    min-height: 1.55rem;
+    padding: 0.12rem 0.72rem;
     border-radius: 999px;
     background: linear-gradient(180deg, #f8f8fd 0%, #ececf6 100%);
     border: 1px solid rgba(33, 44, 72, 0.08);
     color: #5d6880;
-    font-size: 0.76rem;
+    font-size: 0.64rem;
     white-space: nowrap;
 }
 
@@ -114,8 +114,8 @@ body {
     justify-content: space-between;
     align-items: stretch;
     height: 30vh;
-    padding: 1.3vh 1.8vw;
-    gap: 1vh;
+    padding: 0.9vh 1.4vw;
+    gap: 0.55vh;
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(23, 35, 60, 0.08);
     border-radius: 0;
@@ -129,7 +129,7 @@ body {
     align-items: stretch;
     min-height: 0;
     flex: 1 1 auto;
-    gap: 1.4rem;
+    gap: 0.9rem;
 }
 
 .hero-content,
@@ -144,8 +144,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 0.8rem;
-    padding: 1.4rem 1.6rem;
+    gap: 0.42rem;
+    padding: 0.95rem 1.05rem;
     background: linear-gradient(135deg, #16315f 0%, #2457d6 100%);
     color: #ffffff;
     box-shadow: 0 18px 40px rgba(36, 87, 214, 0.18);
@@ -155,39 +155,43 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.4rem 0.85rem;
+    padding: 0.24rem 0.64rem;
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.16);
-    font-size: 0.82rem;
+    font-size: 0.66rem;
     font-weight: 700;
     letter-spacing: 0.02em;
 }
 
 .hero-content h1 {
-    font-size: clamp(1.6rem, 2.4vw, 2.7rem);
-    line-height: 1.05;
+    font-size: clamp(1.15rem, 1.8vw, 1.75rem);
+    line-height: 1.02;
     font-weight: 900;
 }
 
 .hero-content p {
     max-width: 92%;
-    font-size: 0.88rem;
-    line-height: 1.36;
+    font-size: 0.68rem;
+    line-height: 1.22;
     color: rgba(255, 255, 255, 0.9);
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .hero-lines,
 .card-lines {
     display: flex;
     flex-direction: column;
-    gap: 0.45rem;
+    gap: 0.24rem;
     width: 100%;
 }
 
 .hero-lines span,
 .card-lines span {
     display: block;
-    height: 0.34rem;
+    height: 0.22rem;
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.28);
 }
@@ -204,12 +208,12 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.65rem 1.05rem;
-    border-radius: 0.9rem;
+    padding: 0.42rem 0.82rem;
+    border-radius: 0.7rem;
     background: #ffffff;
     color: #193566;
     text-decoration: none;
-    font-size: 0.84rem;
+    font-size: 0.7rem;
     font-weight: 700;
     box-shadow: 0 10px 24px rgba(18, 30, 59, 0.18);
 }
@@ -232,24 +236,24 @@ body {
 
 .hero-note {
     position: absolute;
-    left: 1rem;
-    bottom: 1rem;
+    left: 0.8rem;
+    bottom: 0.8rem;
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
-    padding: 0.8rem 0.95rem;
-    border-radius: 1rem;
+    padding: 0.55rem 0.72rem;
+    border-radius: 0.9rem;
     background: rgba(255, 255, 255, 0.88);
     color: #17233c;
     backdrop-filter: blur(8px);
 }
 
 .hero-note strong {
-    font-size: 0.9rem;
+    font-size: 0.72rem;
 }
 
 .hero-note span {
-    font-size: 0.78rem;
+    font-size: 0.62rem;
     color: #53627e;
 }
 
@@ -263,7 +267,7 @@ body {
     justify-content: space-between;
     align-items: stretch;
     height: 30vh;
-    padding: 1.3vh 1.8vw;
+    padding: 0.85vh 1.4vw;
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(23, 35, 60, 0.08);
     border-radius: 0;
@@ -274,13 +278,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    padding-bottom: 0.8vh;
+    gap: 0.7rem;
+    padding-bottom: 0.45vh;
     border-bottom: 1px solid rgba(23, 35, 60, 0.08);
 }
 
 .section-head h2 {
-    font-size: 1.2rem;
+    font-size: 0.95rem;
     color: #24304a;
 }
 
@@ -289,23 +293,23 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: center;
-    gap: 0.85rem;
+    gap: 0.55rem;
     min-height: 0;
     flex: 1 1 auto;
-    padding: 0.85vh 0;
+    padding: 0.45vh 0;
 }
 
 .card {
-    flex: 1 1 calc(33.333% - 0.85rem);
-    min-width: 180px;
-    height: calc(50% - 0.45rem);
+    flex: 1 1 calc(33.333% - 0.55rem);
+    min-width: 0;
+    height: calc(50% - 0.3rem);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 0.3rem;
-    padding: 0.9rem 1rem;
-    border-radius: 1.25rem;
+    gap: 0.16rem;
+    padding: 0.5rem 0.62rem;
+    border-radius: 0.95rem;
     background: #ffffff;
     border: 1px solid rgba(23, 35, 60, 0.08);
     box-shadow: 0 10px 24px rgba(23, 35, 60, 0.06);
@@ -315,24 +319,29 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 2.2rem;
-    height: 2.2rem;
-    border-radius: 0.8rem;
+    min-width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 0.6rem;
     background: #2457d6;
     color: #ffffff;
-    font-size: 0.86rem;
+    font-size: 0.72rem;
     font-weight: 700;
 }
 
 .card h3 {
-    font-size: 0.97rem;
+    font-size: 0.74rem;
     color: #1c2d4c;
+    line-height: 1.05;
 }
 
 .card p {
-    font-size: 0.72rem;
-    line-height: 1.28;
+    font-size: 0.58rem;
+    line-height: 1.14;
     color: #65748d;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .card-lines span {
@@ -351,13 +360,13 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 5.7rem;
-    padding: 0.48rem 0.95rem;
-    border-radius: 0.65rem;
+    min-width: 4rem;
+    padding: 0.28rem 0.62rem;
+    border-radius: 0.5rem;
     background: linear-gradient(135deg, #7aa2ee 0%, #608fe5 100%);
     color: #ffffff;
     text-decoration: none;
-    font-size: 0.78rem;
+    font-size: 0.6rem;
     font-weight: 600;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
     border: none;
@@ -373,9 +382,9 @@ body {
     flex-direction: column;
     align-items: stretch;
     justify-content: space-between;
-    gap: 0.75rem;
+    gap: 0.45rem;
     height: 20vh;
-    padding: 1.3vh 1.8vw;
+    padding: 0.85vh 1.4vw;
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(23, 35, 60, 0.08);
     border-radius: 0;
@@ -387,7 +396,7 @@ body {
     flex-direction: row;
     align-items: stretch;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 0.7rem;
     min-height: 0;
     flex: 1 1 auto;
 }
@@ -399,18 +408,23 @@ body {
     align-items: center;
     text-align: center;
     color: #ffffff;
-    border-radius: 1.25rem;
-    padding: 0.9rem;
-    gap: 0.35rem;
+    border-radius: 0.95rem;
+    padding: 0.55rem;
+    gap: 0.16rem;
 }
 
 .grow-box h3 {
-    font-size: 1rem;
+    font-size: 0.74rem;
 }
 
 .grow-box p {
-    font-size: 0.78rem;
+    font-size: 0.58rem;
     opacity: 0.92;
+    line-height: 1.14;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .box1 {
@@ -448,11 +462,18 @@ body {
     padding: 0 2rem;
     background: rgba(255, 255, 255, 0.8);
     color: #47536a;
-    font-size: 0.94rem;
+    font-size: 0.72rem;
     letter-spacing: 0.01em;
     border: 1px solid rgba(23, 35, 60, 0.08);
     border-radius: 0;
     box-shadow: 0 16px 40px rgba(34, 47, 79, 0.08);
+}
+
+@media (min-width: 1200px) {
+    .wrapper {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 1100px) {
@@ -516,7 +537,6 @@ body {
         min-height: 110px;
     }
 }
-
 
 @media (max-width: 640px) {
     .nav-links {
