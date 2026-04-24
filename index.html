@@ -253,77 +253,77 @@
                 <p>Kişisel gelişimimde ve projelerimde <strong>Embedded Systems</strong>, <strong>Computer Vision</strong> ve <strong>System Programming</strong> konuları öncelikli ilgi alanlarımı oluşturuyor.</p>
                 <p>Dijital dünyama hoş geldiniz. Tasarladığım bu portfolyo sayfası üzerinden güncel yeteneklerime ve teknik vizyonuma dair fikir edinebilirsiniz.</p>
             </aside>
-<div id="lablar" style="margin-top: 30px; padding: 50px 40px; background: white; border-radius: 32px; box-shadow: 0 20px 50px rgba(0,0,0,0.04); text-align: center; color: #1a202c; border: 1px solid #f0f4f8;">
+<div id="lablar" style="margin-top: 50px; padding: 50px 40px; background: white; border-radius: 32px; box-shadow: 0 20px 50px rgba(0,0,0,0.04); text-align: center; color: #1a202c; border: 1px solid #f0f4f8; clear: both;">
     
-    <span style="background: #eff6ff; color: #3b82f6; padding: 8px 20px; border-radius: 25px; font-size: 14px; font-weight: 700; display: inline-block; margin-bottom: 24px; letter-spacing: 0.5px;">
-        Web Programlama Dersi
-    </span>
-
-    <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 16px; letter-spacing: -1px; color: #0f172a;">Laboratuvar Ana Sayfası</h2>
+    <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 16px; color: #0f172a;">Laboratuvar Çalışmalarım</h2>
     
     <p style="color: #64748b; max-width: 600px; margin: 0 auto 32px; line-height: 1.7; font-size: 16px;">
-        Bu sayfa GitHub Pages üzerinde yayınlanan laboratuvar uygulamalarına giriş için hazırlanmıştır. 
-        Aşağıdaki butondan hafta 7 uygulamasına geçebilirsiniz.
+        GitHub Pages üzerinde yayınladığım haftalık laboratuvar uygulamalarına aşağıdan ulaşabilirsiniz. 
+        Kartların üzerine gelerek projeleri inceleyebilirsiniz.
     </p>
 
     <div style="display: flex; justify-content: center; gap: 16px; margin-bottom: 48px;">
-        <a href="etkilesimli-etkinlik-kaydi/hafta7.html" style="background: #0066ff; color: white; padding: 14px 32px; border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 16px; transition: all 0.3s; box-shadow: 0 10px 20px rgba(0, 102, 255, 0.2);">
-            Hafta 7 Uygulamasına Git
+        <a href="#" style="background: #0066ff; color: white; padding: 14px 32px; border-radius: 14px; text-decoration: none; font-weight: 700; box-shadow: 0 10px 20px rgba(0, 102, 255, 0.2);">
+            Sayfa Başına Dön
         </a>
-        <a href="#lab-grid" style="background: #f1f5f9; color: #475569; padding: 14px 32px; border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 16px; transition: 0.3s;">
-            Diğer Haftalar
+        <a href="#lab-grid" style="background: #f1f5f9; color: #475569; padding: 14px 32px; border-radius: 14px; text-decoration: none; font-weight: 700;">
+            Uygulamaları Listele
         </a>
     </div>
 
-    <div id="lab-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin-top: 20px;">
+    <style>
+        .lab-card {
+            background: white; 
+            border: 1px solid #f1f5f9; 
+            padding: 24px; 
+            border-radius: 20px; 
+            text-decoration: none; 
+            color: inherit; 
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 120px; /* Hepsinin boyutu aynı olsun demiştin */
+        }
+        .lab-card:hover {
+            border-color: #0066ff;
+            background: #f0f7ff;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.1);
+        }
+        .lab-card:hover .week-title { color: #0066ff; }
+    </style>
+
+    <div id="lab-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
         
-        <div style="background: white; border: 1px solid #f1f5f9; padding: 24px; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-            <div style="font-weight: 800; font-size: 14px; color: #0f172a;">Hafta 1</div>
-            <div style="color: #94a3b8; font-size: 13px; margin-top: 6px; font-weight: 500;">GitHub Pages</div>
-        </div>
-
-        <div style="background: white; border: 1px solid #f1f5f9; padding: 24px; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-            <div style="font-weight: 800; font-size: 14px; color: #0f172a;">Hafta 2</div>
-            <div style="color: #94a3b8; font-size: 13px; margin-top: 6px; font-weight: 500;">HTML + CSS</div>
-        </div>
-
-        <a href="not_hesapla.html" style="text-decoration: none; color: inherit;">
-            <div style="background: white; border: 1px solid #f1f5f9; padding: 24px; border-radius: 20px; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-                <div style="font-weight: 800; font-size: 14px; color: #0f172a;">Hafta 3</div>
-                <div style="color: #94a3b8; font-size: 13px; margin-top: 6px; font-weight: 500;">Form Yapıları</div>
-            </div>
+        <a href="flexbox_odev/index.html" class="lab-card">
+            <div class="week-title" style="font-weight: 800; font-size: 14px;">Hafta 4</div>
+            <div style="color: #94a3b8; font-size: 13px; margin-top: 6px;">Proje: Flexbox Uygulaması</div>
         </a>
 
-        <a href="flexbox_odev/index.html" style="text-decoration: none; color: inherit;">
-            <div style="background: white; border: 1px solid #f1f5f9; padding: 24px; border-radius: 20px; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-                <div style="font-weight: 800; font-size: 14px; color: #0f172a;">Hafta 4</div>
-                <div style="color: #94a3b8; font-size: 13px; margin-top: 6px; font-weight: 500;">Flexbox</div>
-            </div>
+        <a href="lab-position.html" class="lab-card">
+            <div class="week-title" style="font-weight: 800; font-size: 14px;">Hafta 5</div>
+            <div style="color: #94a3b8; font-size: 13px; margin-top: 6px;">Proje: CSS Position (Chatbot)</div>
         </a>
 
-        <a href="lab-position.html" style="text-decoration: none; color: inherit;">
-            <div style="background: white; border: 1px solid #f1f5f9; padding: 24px; border-radius: 20px; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-                <div style="font-weight: 800; font-size: 14px; color: #0f172a;">Hafta 5</div>
-                <div style="color: #94a3b8; font-size: 13px; margin-top: 6px; font-weight: 500;">Position</div>
-            </div>
+        <a href="not_hesapla.html" class="lab-card">
+            <div class="week-title" style="font-weight: 800; font-size: 14px;">Hafta 6</div>
+            <div style="color: #94a3b8; font-size: 13px; margin-top: 6px;">Proje: Not Hesaplama</div>
         </a>
 
-        <a href="birim_donusturucu.html" style="text-decoration: none; color: inherit;">
-            <div style="background: white; border: 1px solid #f1f5f9; padding: 24px; border-radius: 20px; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-                <div style="font-weight: 800; font-size: 14px; color: #0f172a;">Hafta 6</div>
-                <div style="color: #94a3b8; font-size: 13px; margin-top: 6px; font-weight: 500;">JavaScript</div>
-            </div>
+        <a href="birim_donusturucu.html" class="lab-card">
+            <div class="week-title" style="font-weight: 800; font-size: 14px;">Hafta 6</div>
+            <div style="color: #94a3b8; font-size: 13px; margin-top: 6px;">Proje: Birim Dönüştürücü</div>
         </a>
 
-        <a href="etkilesimli-etkinlik-kaydi/hafta7.html" style="text-decoration: none; color: inherit;">
-            <div style="background: white; border: 1px solid #f1f5f9; padding: 24px; border-radius: 20px; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-                <div style="font-weight: 800; font-size: 14px; color: #0f172a;">Hafta 7</div>
-                <div style="color: #94a3b8; font-size: 13px; margin-top: 6px; font-weight: 500;">Bootstrap + JS</div>
-            </div>
+        <a href="etkilesimli-etkinlik-kaydi/hafta7.html" class="lab-card">
+            <div class="week-title" style="font-weight: 800; font-size: 14px;">Hafta 7</div>
+            <div style="color: #94a3b8; font-size: 13px; margin-top: 6px;">Bootstrap + JS Etkinlik</div>
         </a>
 
     </div>
-</div>    
+</div>   
         </main>
 
         <section class="contact-container">
