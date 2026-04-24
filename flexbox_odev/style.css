@@ -17,8 +17,8 @@ body {
     flex-direction: column;
     height: 100vh;
     overflow: hidden;
-    padding: 1.4vh 2vw;
-    gap: 1.2vh;
+    padding: 0;
+    gap: 0;
 }
 
 .navbar {
@@ -32,7 +32,7 @@ body {
     border-bottom: 1px solid rgba(23, 35, 60, 0.08);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(23, 35, 60, 0.08);
-    border-radius: 1.2rem;
+    border-radius: 0;
     box-shadow: 0 16px 40px rgba(34, 47, 79, 0.08);
     overflow: hidden;
 }
@@ -118,7 +118,7 @@ body {
     gap: 1vh;
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(23, 35, 60, 0.08);
-    border-radius: 1.2rem;
+    border-radius: 0;
     box-shadow: 0 16px 40px rgba(34, 47, 79, 0.08);
 }
 
@@ -266,7 +266,7 @@ body {
     padding: 1.3vh 1.8vw;
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(23, 35, 60, 0.08);
-    border-radius: 1.2rem;
+    border-radius: 0;
     box-shadow: 0 16px 40px rgba(34, 47, 79, 0.08);
 }
 
@@ -378,7 +378,7 @@ body {
     padding: 1.3vh 1.8vw;
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(23, 35, 60, 0.08);
-    border-radius: 1.2rem;
+    border-radius: 0;
     box-shadow: 0 16px 40px rgba(34, 47, 79, 0.08);
 }
 
@@ -451,7 +451,7 @@ body {
     font-size: 0.94rem;
     letter-spacing: 0.01em;
     border: 1px solid rgba(23, 35, 60, 0.08);
-    border-radius: 1.2rem;
+    border-radius: 0;
     box-shadow: 0 16px 40px rgba(34, 47, 79, 0.08);
 }
 
@@ -533,5 +533,6 @@ body {
 
     .wrapper {
         padding: 0.8rem;
+        gap: 0.8rem;
     }
 }
