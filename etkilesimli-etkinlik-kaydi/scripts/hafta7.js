@@ -1,40 +1,102 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("workshopForm");
-    const themeBtn = document.getElementById("themeBtn");
-    const sonucAlani = document.getElementById("sonucAlani");
-    const ozetIcerik = document.getElementById("ozetIcerik");
+const body = document.body;
+const themeToggle = document.getElementById("themeToggle");
+const applicationForm = document.getElementById("applicationForm");
+const resetButton = document.getElementById("resetButton");
+const formAlert = document.getElementById("formAlert");
+const summaryResult = document.getElementById("summaryResult");
 
-    // 1. Tema Değiştirme (JS Etkileşimi)
-    themeBtn.addEventListener("click", () => {
-        const currentTheme = document.documentElement.getAttribute("data-bs-theme");
-        document.documentElement.setAttribute("data-bs-theme", currentTheme === "dark" ? "light" : "dark");
-    });
+function showAlert(message, type) {
+  formAlert.className = `alert alert-${type}`;
+  formAlert.textContent = message;
+  formAlert.classList.remove("d-none");
+}
 
-    // 2. Form Özeti Oluşturma
-    form.addEventListener("submit", (e) => {
-        e.preventDefault(); // Sayfa yenilenmesini engeller
+function clearAlert() {
+  formAlert.className = "alert d-none";
+  formAlert.textContent = "";
+}
 
-        const ad = document.getElementById("adSoyad").value;
-        const email = document.getElementById("email").value;
-        const bolum = document.getElementById("bolum").value;
-        const sinif = document.querySelector('input[name="sinif"]:checked').value;
-        const yuzYuze = document.getElementById("yuzYuze").checked ? "Yüz Yüze" : "Online";
+function setTheme(isDark) {
+  body.classList.toggle("theme-dark", isDark);
+  body.classList.toggle("theme-light", !isDark);
+  themeToggle.textContent = isDark ? "Açık Temaya Geç" : "Koyu Temaya Geç";
+}
 
-        // Eksik alan kontrolü
-        if (!ad || !email || !bolum) {
-            alert("Lütfen tüm zorunlu alanları doldurunuz.");
-            return;
-        }
+function buildSummaryCard(data) {
+  summaryResult.className = "summary-card card shadow-sm rounded-4";
+  summaryResult.innerHTML = `
+    <div class="card-body p-4 p-md-5">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+        <div>
+          <span class="badge text-bg-success rounded-pill px-3 py-2 mb-3">Kayıt Talebi Alındı</span>
+          <h2 class="card-title display-6 fw-bold mb-2">Atölye Kayıt Özeti</h2>
+          <p class="text-body-secondary mb-0">Bilgileriniz chatbot atölyesi başvurunuz için dinamik olarak oluşturuldu.</p>
+        </div>
+        <span class="badge text-bg-primary px-3 py-2 rounded-pill">${data.attendanceType}</span>
+      </div>
 
-        // Özet oluşturma
-        ozetIcerik.innerHTML = `
-            <p><strong>Katılımcı:</strong> ${ad}</p>
-            <p><strong>Bölüm:</strong> ${bolum} (${sinif}. Sınıf)</p>
-            <p><strong>Katılım Şekli:</strong> ${yuzYuze}</p>
-            <p><strong>Bilgilendirme:</strong> Kayıt detayları ${email} adresine gönderilmiştir.</p>
-        `;
+      <div class="list-group list-group-flush mb-4">
+        <div class="list-group-item"><strong>Ad Soyad:</strong> ${data.fullName}</div>
+        <div class="list-group-item"><strong>E-posta:</strong> ${data.email}</div>
+        <div class="list-group-item"><strong>Bölüm:</strong> ${data.department}</div>
+        <div class="list-group-item"><strong>Sınıf:</strong> ${data.grade}</div>
+        <div class="list-group-item"><strong>Oturum:</strong> ${data.session}</div>
+        <div class="list-group-item"><strong>Katılım Türü:</strong> ${data.attendanceType}</div>
+        <div class="list-group-item"><strong>Mesaj:</strong> ${data.message}</div>
+      </div>
 
-        sonucAlani.classList.remove("d-none"); // Sonucu göster
-        form.reset(); // Formu temizle
-    });
+      <div class="alert alert-info mb-0" role="status">
+        Kayıt talebiniz oluşturuldu. Etkinlik günü Marmara Üniversitesi Teknoloji Fakültesi T2 Blok konferans salonu girişinde adınızı doğrulayabilirsiniz.
+      </div>
+    </div>
+  `;
+}
+
+themeToggle.addEventListener("click", function () {
+  const isDark = !body.classList.contains("theme-dark");
+  setTheme(isDark);
 });
+
+applicationForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  clearAlert();
+
+  const formData = {
+    fullName: document.getElementById("fullName").value.trim(),
+    email: document.getElementById("email").value.trim(),
+    department: document.getElementById("department").value.trim(),
+    grade: document.getElementById("grade").value,
+    session: document.getElementById("session").value,
+    attendanceType: document.getElementById("attendanceType").value,
+    message: document.getElementById("message").value.trim(),
+    consent: document.getElementById("consent").checked,
+  };
+
+  const hasMissingField =
+    !formData.fullName ||
+    !formData.email ||
+    !formData.department ||
+    !formData.grade ||
+    !formData.session ||
+    !formData.attendanceType ||
+    !formData.message;
+
+  if (hasMissingField || !formData.consent) {
+    showAlert("Lütfen tüm alanları doldurun ve onay kutusunu işaretleyin.", "warning");
+    return;
+  }
+
+  buildSummaryCard(formData);
+  showAlert("Kayıt özeti başarıyla oluşturuldu.", "success");
+  summaryResult.scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+resetButton.addEventListener("click", function () {
+  applicationForm.reset();
+  clearAlert();
+  summaryResult.className = "alert alert-info result-placeholder rounded-4 shadow-sm mb-0";
+  summaryResult.innerHTML =
+    "Henüz kayıt özeti oluşturulmadı. Formu doldurduktan sonra sonuç burada görünecek.";
+});
+
+setTheme(false);
