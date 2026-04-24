@@ -81,6 +81,17 @@ applicationForm.addEventListener("submit", function (event) {
     !formData.attendanceType ||
     !formData.message;
 
+  document.getElementById('applicationForm').addEventListener('submit', function (event) {
+    // Eğer formda eksik/hatalı yer varsa
+    if (!this.checkValidity()) {
+        event.preventDefault(); // Sayfanın yenilenmesini durdur
+        event.stopPropagation(); // Hataları yönet
+    }
+    
+    // Hatalı yerleri kırmızı yapacak olan Bootstrap sınıfını ekle
+    this.classList.add('was-validated');
+}, false);
+
   if (hasMissingField || !formData.consent) {
     showAlert("Lütfen tüm alanları doldurun ve onay kutusunu işaretleyin.", "warning");
     return;
