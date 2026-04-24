@@ -1,134 +1,382 @@
 <!DOCTYPE html>
-<html lang="tr" data-bs-theme="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Vision Workshop 2026 | MU Engineering</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/hafta7.css">
-</head>
-<body>
-
-    <nav class="navbar navbar-expand-lg sticky-top custom-nav">
-        <div class="container">
-            <a class="navbar-brand neon-text" href="index.html">MARMARA<span>_AI</span></a>
-            <div class="ms-auto">
-                <button class="btn btn-outline-info btn-sm me-2" id="themeBtn">Görünüm Değiştir</button>
-                <a href="index.html" class="btn btn-neon-sm">← ANA SAYFAYA DÖN</a>
-            </div>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hafta 7 | Chatbot Geliştirme Atölyesi</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/hafta7.css" />
+  </head>
+  <body class="week7-page theme-light">
+    <nav class="navbar navbar-expand-lg sticky-top border-bottom week7-navbar">
+      <div class="container">
+       <a class="navbar-brand fw-bold fs-2" href="../index.html#lablar">  <span class="text-primary">WP</span> Lab </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Menüyü aç"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+            <li class="nav-item"><a class="nav-link" href="../index.html">Ana Sayfa</a>
+            <li class="nav-item"><a class="nav-link" href="#atolyeler">Atölyeler</a></li>
+            <li class="nav-item"><a class="nav-link" href="#basvuru">Başvuru</a></li>
+            <li class="nav-item"><a class="nav-link" href="#sonuc">Sonuç</a></li>
+          </ul>
         </div>
+      </div>
     </nav>
 
-    <header class="hero-wrap text-center">
-        <div class="container">
-            <h1 class="display-3 fw-bold mb-3">AI & GÖRÜNTÜ İŞLEME <br><span class="highlight">ATÖLYESİ</span></h1>
-            <p class="lead mb-4">Geleceğin Mühendisleri için Uygulamalı YOLOv8 Eğitimi</p>
-            <a href="#kayit" class="btn btn-neon-action btn-lg px-5 shadow">KAYIT OL</a>
+    <header class="py-5 py-lg-6">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-7">
+            <span class="badge text-bg-primary px-3 py-2 rounded-pill mb-4">Marmara Üniversitesi Teknoloji Fakültesi</span>
+            <h1 class="display-2 fw-bold mb-4">Üretken Yapay Zeka ile Chatbot Geliştirme Atölyesi</h1>
+            <p class="lead text-body-secondary hero-copy mb-4">
+              Marmara Üniversitesi Teknoloji Fakültesi Konferans Salonu'nda düzenlenecek bu atölyede;
+              kampüs senaryolarına uygun chatbot akışı, prompt tasarımı ve bilgi tabanı destekli yanıt üretimi
+              örnekleri üzerinden gerçekçi bir uygulama deneyimi paylaşılacaktır.
+            </p>
+            <div class="d-flex flex-column flex-sm-row gap-3">
+              <a class="btn btn-primary btn-lg px-4 py-3" href="#basvuru">Kayıt Formuna Git</a>
+              <button class="btn btn-outline-dark btn-lg px-4 py-3" id="themeToggle" type="button">
+                Koyu Temaya Geç
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <section class="hero-panel shadow-sm rounded-5 p-4">
+              <h2 class="fw-bold mb-4">Etkinlikte Neler Var?</h2>
+              <div class="d-flex flex-wrap gap-2 mb-4">
+                <span class="badge rounded-pill text-bg-dark">LLM</span>
+                <span class="badge rounded-pill text-bg-primary">Prompt</span>
+                <span class="badge rounded-pill text-bg-success">RAG</span>
+                <span class="badge rounded-pill text-bg-warning">Demo</span>
+                <span class="badge rounded-pill text-bg-info text-dark">Soru-Cevap</span>
+              </div>
+              <ul class="list-group list-group-flush feature-list">
+                <li class="list-group-item">Canlı chatbot senaryosu ve kullanıcı akışı</li>
+                <li class="list-group-item">Prompt tasarımı ve rol tanımlama yaklaşımı</li>
+                <li class="list-group-item">Bilgi tabanından yanıt üreten örnek mimari</li>
+                <li class="list-group-item">Soru-cevap ve mini proje fikirleri</li>
+              </ul>
+            </section>
+          </div>
         </div>
+      </div>
     </header>
 
-    <div class="container py-5">
-        <div class="row g-4 mb-5">
-            <div class="col-md-4">
-                <div class="cyber-card p-4 h-100 text-center">
-                    <h3 class="h5 neon-text mb-3">01. Veri Hazırlama</h3>
-                    <p class="small text-secondary">Roboflow ile görüntü etiketleme ve veri seti optimizasyonu.</p>
+    <main>
+      <section id="atolyeler" class="pb-5">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h2 class="display-4 fw-bold">Atölye İçerikleri</h2>
+            <p class="lead text-body-secondary">Chatbot geliştirme sürecini gerçek bir etkinlik akışıyla ele alan oturum başlıkları</p>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-6 col-xl-4">
+              <article class="card h-100 border-0 shadow-sm rounded-5 info-card">
+                <div class="card-body p-4">
+                  <span class="badge text-bg-primary rounded-3 mb-4">01</span>
+                  <h3 class="card-title h1 mb-3">Chatbot Temelleri</h3>
+                  <p class="card-text text-body-secondary">
+                    Chatbot türleri, kullanım senaryoları ve üniversite ortamında hangi problemlere çözüm üretebileceği ele alınır.
+                  </p>
+                  <a class="btn btn-outline-primary mt-3" href="#detay-chatbot">Detay</a>
                 </div>
+              </article>
             </div>
-            <div class="col-md-4">
-                <div class="cyber-card p-4 h-100 text-center">
-                    <h3 class="h5 neon-text mb-3">02. Model Eğitimi</h3>
-                    <p class="small text-secondary">YOLOv8 mimarisi ile nesne tespiti modelleri geliştirme.</p>
+            <div class="col-md-6 col-xl-4">
+              <article class="card h-100 border-0 shadow-sm rounded-5 info-card">
+                <div class="card-body p-4">
+                  <span class="badge text-bg-success rounded-3 mb-4">02</span>
+                  <h3 class="card-title h1 mb-3">Prompt ve Akış Tasarımı</h3>
+                  <p class="card-text text-body-secondary">
+                    Sistem mesajı, kullanıcı niyeti ve örnek konuşma akışları üzerinden daha tutarlı chatbot deneyimleri kurgulanır.
+                  </p>
+                  <a class="btn btn-outline-success mt-3" href="#detay-prompt">Detay</a>
                 </div>
+              </article>
             </div>
-            <div class="col-md-4">
-                <div class="cyber-card p-4 h-100 text-center">
-                    <h3 class="h5 neon-text mb-3">03. Donanım Entegrasyonu</h3>
-                    <p class="small text-secondary">Eğitilen modellerin Raspberry Pi ve sistemlere aktarımı.</p>
+            <div class="col-md-6 col-xl-4">
+              <article class="card h-100 border-0 shadow-sm rounded-5 info-card">
+                <div class="card-body p-4">
+                  <span class="badge text-bg-warning rounded-3 mb-4 text-dark">03</span>
+                  <h3 class="card-title h1 mb-3">Canlı Uygulama Demosu</h3>
+                  <p class="card-text text-body-secondary">
+                    Üniversite bilgi asistanı örneği üzerinden bilgi tabanına bağlı yanıt üretimi ve değerlendirme kriterleri gösterilir.
+                  </p>
+                  <a class="btn btn-outline-warning mt-3" href="#detay-demo">Detay</a>
                 </div>
+              </article>
             </div>
+          </div>
         </div>
+      </section>
 
-        <div class="row justify-content-center" id="kayit">
-            <div class="col-lg-8">
-                <div class="glass-form p-5">
-                    <h2 class="text-center mb-4 fw-bold">BAŞVURU TERMİNALİ</h2>
-                    <form id="workshopForm">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label class="label-neon">AD SOYAD</label>
-                                <input type="text" id="adSoyad" class="form-control cyber-input" placeholder="Büşra Ay" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="label-neon">E-POSTA</label>
-                                <input type="email" id="email" class="form-control cyber-input" placeholder="busra@marmara.edu.tr" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="label-neon">MARMARA ÜNİ. BÖLÜMÜ</label>
-                                <select id="bolum" class="form-select cyber-input" required>
-                                    <option value="">Seçiniz...</option>
-                                    <option>Bilgisayar Mühendisliği</option>
-                                    <option>Tekstil Mühendisliği</option>
-                                    <option>Elektrik-Elektronik Mühendisliği</option>
-                                    <option>Makine Mühendisliği</option>
-                                    <option>Biyomühendislik</option>
-                                    <option>Endüstri Mühendisliği</option>
-                                    <option>Kimya Mühendisliği</option>
-                                    <option>Metalurji ve Malzeme Mühendisliği</option>
-                                    <option>Çevre Mühendisliği</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="label-neon">SINIF</label>
-                                <div class="d-flex gap-3 pt-2">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sinif" value="3" checked>
-                                        <label class="form-check-label">3. Sınıf</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sinif" value="4">
-                                        <label class="form-check-label">4. Sınıf / Mezun</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="label-neon">KATILIM TÜRÜ</label>
-                                <div class="form-check mt-1">
-                                    <input class="form-check-input" type="checkbox" id="yuzYuze" checked>
-                                    <label class="form-check-label">Yüz yüze katılım istiyorum</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="label-neon">YEMEK TERCİHİ</label>
-                                <select id="yemek" class="form-select cyber-input">
-                                    <option>Standart</option>
-                                    <option>Vejetaryen</option>
-                                </select>
-                            </div>
-                            <div class="col-12 mt-4">
-                                <button type="submit" class="btn btn-neon-action w-100 fw-bold py-3">BAŞVURUYU TAMAMLA</button>
-                            </div>
-                        </div>
-                    </form>
+      <section id="detaylar" class="pb-5">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Oturum Detayları</h2>
+          </div>
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <article id="detay-chatbot" class="card border-0 shadow-sm rounded-5 h-100 detail-card">
+                <div class="card-body p-4 p-lg-5">
+                  <span class="badge text-bg-primary rounded-pill px-3 py-2 mb-3">Detay 01</span>
+                  <h3 class="h1 mb-3">Chatbot Temelleri</h3>
+                  <p class="text-body-secondary">
+                    Açılış oturumunda üretken yapay zeka destekli chatbot kavramı, temel bileşenleri ve
+                    üniversite yaşamında kullanılabilecek pratik senaryolar üzerinden ele alınacaktır.
+                  </p>
+                  <ul class="list-group list-group-flush detail-list mt-4">
+                    <li class="list-group-item">Kural tabanlı ve LLM tabanlı chatbot farkları</li>
+                    <li class="list-group-item">Öğrenci işleri, etkinlik bilgilendirme ve kampüs yönlendirme örnekleri</li>
+                    <li class="list-group-item">İyi bir chatbot deneyiminde ton, güven ve açıklık ilkeleri</li>
+                    <li class="list-group-item">Atölye sonunda geliştirilecek örnek kampüs asistanının kapsamı</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+            <div class="col-lg-4">
+              <article id="detay-prompt" class="card border-0 shadow-sm rounded-5 h-100 detail-card">
+                <div class="card-body p-4 p-lg-5">
+                  <span class="badge text-bg-success rounded-pill px-3 py-2 mb-3">Detay 02</span>
+                  <h3 class="h1 mb-3">Prompt ve Akış Tasarımı</h3>
+                  <p class="text-body-secondary">
+                    İkinci bölümde, chatbot yanıt kalitesini doğrudan etkileyen sistem mesajı kurgusu,
+                    kullanıcı niyeti analizi ve konuşma akışı tasarımı uygulamalı örneklerle incelenecektir.
+                  </p>
+                  <ul class="list-group list-group-flush detail-list mt-4">
+                    <li class="list-group-item">Sistem mesajı, rol tanımı ve cevap sınırlarının belirlenmesi</li>
+                    <li class="list-group-item">Sık sorulan sorular için çok adımlı konuşma akışı oluşturma</li>
+                    <li class="list-group-item">Belirsiz kullanıcı sorularında açıklayıcı geri dönüş verme yaklaşımı</li>
+                    <li class="list-group-item">Katılımcıların kendi fikirleri için mini prompt taslakları hazırlaması</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+            <div class="col-lg-4">
+              <article id="detay-demo" class="card border-0 shadow-sm rounded-5 h-100 detail-card">
+                <div class="card-body p-4 p-lg-5">
+                  <span class="badge text-bg-warning rounded-pill px-3 py-2 mb-3 text-dark">Detay 03</span>
+                  <h3 class="h1 mb-3">Canlı Uygulama Demosu</h3>
+                  <p class="text-body-secondary">
+                    Son bölümde, Marmara Üniversitesi Teknoloji Fakültesi bağlamında kurgulanmış örnek bir
+                    bilgi asistanı üzerinden canlı demo yapılacak ve çıktılar birlikte değerlendirilecektir.
+                  </p>
+                  <ul class="list-group list-group-flush detail-list mt-4">
+                    <li class="list-group-item">Dökümanlardan beslenen örnek bilgi tabanı mantığı</li>
+                    <li class="list-group-item">Yanıtların doğruluk, açıklık ve tutarlılık açısından değerlendirilmesi</li>
+                    <li class="list-group-item">T2 Blok konferans salonu etkinlik akışına uygun kayıt ve bilgilendirme senaryosu</li>
+                    <li class="list-group-item">Atölye sonunda geliştirilebilecek portföy projesi fikirleri</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                    <div id="sonucAlani" class="mt-4 d-none">
-                        <div class="alert alert-info border-0 bg-dark text-cyan shadow-lg p-4">
-                            <h4 class="alert-heading fw-bold">✓ KAYIT BAŞARILI</h4>
-                            <hr class="border-cyan">
-                            <div id="ozetIcerik" class="small"></div>
-                        </div>
+      <section id="bilgiler" class="py-5 section-soft">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-lg-5">
+              <article class="card border-0 shadow-sm rounded-5 h-100">
+                <div class="card-body p-4 p-lg-5">
+                  <h2 class="display-6 fw-bold mb-4">Etkinlik Bilgileri</h2>
+                  <div class="list-group info-list">
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                      <span>Tarih</span>
+                      <span class="badge text-bg-primary rounded-pill px-3 py-2">12 Mayıs</span>
                     </div>
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                      <span>Saat</span>
+                      <span class="badge text-bg-dark rounded-pill px-3 py-2">13.30</span>
+                    </div>
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                      <span>Yer</span>
+                      <span class="badge text-bg-success rounded-pill px-3 py-2">Konferans Salonu</span>
+                    </div>
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                      <span>Kontenjan</span>
+                      <span class="badge text-bg-danger rounded-pill px-3 py-2">40 Kişi</span>
+                    </div>
+                  </div>
                 </div>
+              </article>
             </div>
+            <div class="col-lg-7">
+              <article class="card border-0 shadow-sm rounded-5 h-100">
+                <div class="card-body p-4 p-lg-5">
+                  <h2 class="display-6 fw-bold mb-4">Neden Katılmalısınız?</h2>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <div class="reason-box reason-blue h-100">
+                        <h3 class="h2 mb-3">Gerçek kullanım senaryosu</h3>
+                        <p class="mb-0 text-body-secondary">
+                          Öğrenci sorularını yanıtlayan bir kampüs asistanı fikri üzerinden doğrudan uygulanabilir örnekler görürsünüz.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="reason-box reason-green h-100">
+                        <h3 class="h2 mb-3">Prompt mühendisliği</h3>
+                        <p class="mb-0 text-body-secondary">
+                          Doğru istem kurgusu, ton yönetimi ve yanıt kalitesini artıran örnek şablonları inceleme fırsatı bulursunuz.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="reason-box reason-yellow h-100">
+                        <h3 class="h2 mb-3">Bilgi tabanı entegrasyonu</h3>
+                        <p class="mb-0 text-body-secondary">
+                          Dökümanlardan beslenen ve daha isabetli cevaplar üreten chatbot mantığını örnek bir akışla tanırsınız.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="reason-box reason-cyan h-100">
+                        <h3 class="h2 mb-3">Portföy değeri</h3>
+                        <p class="mb-0 text-body-secondary">
+                          Atölyede konuşulan mini proje fikirleriyle kendi portföyünüz veya bitirme projeniz için yeni yönler geliştirebilirsiniz.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
         </div>
-    </div>
+      </section>
 
-    <footer class="py-4 text-center border-top border-secondary mt-5">
-        <p class="small text-secondary">&copy; 2026 Marmara Mühendislik - AI Vision Lab</p>
+      <section id="basvuru" class="py-5">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xl-9">
+              <article class="card border-0 shadow rounded-5 form-shell">
+                <div class="card-body p-4 p-md-5">
+                  <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3 mb-4">
+                    <div>
+                      <h2 class="display-5 fw-bold mb-2">Katılım Formu</h2>
+                      <p class="lead text-body-secondary mb-0">
+                        Formu doldurun, JavaScript otomatik olarak atölye kayıt özetinizi oluştursun.
+                      </p>
+                    </div>
+                    <span class="badge text-bg-secondary px-4 py-3 rounded-3 align-self-start align-self-lg-center">
+                      AI Workshop
+                    </span>
+                  </div>
+
+                  <div id="formAlert" class="alert d-none" role="alert"></div>
+
+                  <form id="applicationForm" novalidate>
+                    <div class="row g-4">
+                      <div class="col-md-6">
+                        <label class="form-label fs-4" for="fullName">Ad Soyad</label>
+                        <input class="form-control form-control-lg" id="fullName" name="fullName" type="text" />
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label fs-4" for="email">E-posta</label>
+                        <input class="form-control form-control-lg" id="email" name="email" type="email" />
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label fs-4" for="department">Bölüm</label>
+                        <input class="form-control form-control-lg" id="department" name="department" type="text" />
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label fs-4" for="grade">Sınıf</label>
+                        <select class="form-select form-select-lg" id="grade" name="grade">
+                          <option value="">Seçiniz</option>
+                          <option>1. Sınıf</option>
+                          <option>2. Sınıf</option>
+                          <option>3. Sınıf</option>
+                          <option>4. Sınıf</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label fs-4" for="session">Katılmak İstediğiniz Oturum</label>
+                        <select class="form-select form-select-lg" id="session" name="session">
+                          <option value="">Seçiniz</option>
+                          <option>Kampüs Bilgi Asistanı Tasarımı</option>
+                          <option>Prompt ve Konuşma Akışı Oturumu</option>
+                          <option>RAG Destekli Chatbot Demo Uygulaması</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label fs-4" for="attendanceType">Katılım Türü</label>
+                        <select class="form-select form-select-lg" id="attendanceType" name="attendanceType">
+                          <option value="">Seçiniz</option>
+                          <option>Yüz yüze</option>
+                          <option>Çevrim içi</option>
+                          <option>Hibrit</option>
+                        </select>
+                      </div>
+                      <div class="col-12">
+                        <label class="form-label fs-4" for="message">Kısa Mesaj</label>
+                        <textarea
+                          class="form-control form-control-lg"
+                          id="message"
+                          name="message"
+                          rows="5"
+                          placeholder="Bu atölyede hangi chatbot senaryosunu geliştirmek istediğinizi kısaca yazın."
+                        ></textarea>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-check fs-4">
+                          <input class="form-check-input" id="consent" name="consent" type="checkbox" />
+                          <label class="form-check-label" for="consent">
+                            Bilgilerimin sadece atölye kayıt süreci amacıyla kullanılmasını kabul ediyorum.
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-12 d-flex flex-column flex-sm-row gap-3">
+                        <button class="btn btn-primary btn-lg px-4" type="submit">Kayıt Özeti Oluştur</button>
+                        <button class="btn btn-outline-secondary btn-lg px-4" id="resetButton" type="button">
+                          Formu Temizle
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="sonuc" class="pb-5">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xl-9">
+              <div id="summaryResult" class="alert alert-info result-placeholder rounded-4 shadow-sm mb-0" role="status">
+                Henüz kayıt özeti oluşturulmadı. Formu doldurduktan sonra sonuç burada görünecek.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-4 border-top">
+      <div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2">
+        <p class="mb-0">Marmara Üniversitesi Teknoloji Fakültesi - T2 Blok Konferans Salonu</p>
+        <a class="text-decoration-none" href="index.html">Ana sayfaya geri dön</a>
+      </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/hafta7.js"></script>
-</body>
+  </body>
 </html>
