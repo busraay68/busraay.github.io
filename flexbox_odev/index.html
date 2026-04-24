@@ -3,59 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox Lab Uygulaması - Büşra Ay</title>
+    <title>Marmara Üniversitesi | Teknoloji Fakültesi Flexbox Lab</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <div class="wrapper">
         
         <nav class="navbar">
             <div class="logo">
-                <a href="../index.html">
-                    <img src="marmara_logo.png" alt="Marmara Üniversitesi Logosu">
+                <a href="../index.html" style="text-decoration: none; color: inherit;">
+                    <strong>MARMARA</strong> <span style="font-weight: 300;">Teknoloji</span>
                 </a>
             </div>
             <ul class="nav-links">
                 <li><a href="../index.html">Ana Sayfa</a></li>
-                <li><a href="../about.html">Hakkımda</a></li>
-                <li><a href="../interests.html">İlgi Alanları</a></li>
-                <li><a href="../contact.html">İletişim</a></li>
+                <li><a href="#">Duyurular</a></li>
+                <li><a href="#">Akademik</a></li>
+                <li><a href="#">İletişim</a></li>
             </ul>
         </nav>
 
         <section class="hero">
             <div class="hero-content">
-                <h1>Disiplinler Arası Geliştirici</h1>
-                <p>Tekstil mühendisliği temeli üzerine bilgisayar mühendisliği vizyonu inşa ediyorum. Bu sayfa, Flexbox yeteneklerimi sergilediğim bir lab uygulamasıdır.</p>
-                <a href="../index.html" class="back-btn">⬅️ Portfolyoya Dön</a>
+                <span class="hero-tag">Geleceğin Mühendisleri Burada</span>
+                <h1>Teknoloji ve İnovasyon <br>Merkezi</h1>
+                <p>
+                    Marmara Üniversitesi Teknoloji Fakültesi, teorik bilgiyi pratik uygulama ile 
+                    birleştiren laboratuvar imkanlarıyla mühendislik eğitimine yön veriyor.
+                </p>
+                <a href="#" class="hero-btn">Etkinlik Takvimi</a>
             </div>
-            <div class="hero-placeholder">
-                <img src="hero-gorsel.jpg" alt="Hero Görseli">
+            <div class="hero-visual">
+                <div class="placeholder-content">
+                    <strong>Kampüs Görseli</strong>
+                    <span>align-items: stretch</span>
+                </div>
             </div>
         </section>
 
         <section class="cards">
-            <div class="card">HTML5 & CSS3</div>
-            <div class="card">Algoritma</div>
-            <div class="card">Embedded Systems</div>
-            <div class="card">Computer Vision</div>
-            <div class="card">System Programming</div>
-            <div class="card">Flexbox Design</div>
+            <article class="card">
+                <span class="card-no">01</span>
+                <h2>Erasmus+</h2>
+                <p>2026-2027 Öğrenim Hareketliliği başvuruları başladı.</p>
+            </article>
+            <article class="card">
+                <span class="card-no">02</span>
+                <h2>Staj İşlemleri</h2>
+                <p>Yaz dönemi staj defterleri teslim süreci hakkında duyuru.</p>
+            </article>
+            <article class="card">
+                <span class="card-no">03</span>
+                <h2>Seminerler</h2>
+                <p>Bilgisayar Mühendisliği Bölümü teknik söyleşileri.</p>
+            </article>
+            <article class="card">
+                <span class="card-no">04</span>
+                <h2>USP 2026</h2>
+                <p>Ulusal Staj Programı mülakat sonuçları açıklandı.</p>
+            </article>
+            <article class="card">
+                <span class="card-no">05</span>
+                <h2>Proje Sergisi</h2>
+                <p>Bitirme projeleri yıl sonu sergisi katılım formları.</p>
+            </article>
+            <article class="card">
+                <span class="card-no">06</span>
+                <h2>Kütüphane</h2>
+                <p>Vize haftası boyunca 7/24 çalışma saatleri düzenlemesi.</p>
+            </article>
         </section>
 
         <section class="grow-section">
-            <div class="box1">Analitik Düşünce (Grow: 1)</div>
-            <div class="box2">Sürekli Öğrenme ve Gelişim (Grow: 2)</div>
-            <div class="box3">Yenilikçi Çözümler (Grow: 1)</div>
+            <div class="grow-box box1">
+                <h3>Eğitim</h3>
+                <p>Laboratuvarlar</p>
+            </div>
+            <div class="grow-box box2">
+                <h3>Ar-Ge ve İnovasyon</h3>
+                <p>Fakülte Odak Noktası (Grow: 2)</p>
+            </div>
+            <div class="grow-box box3">
+                <h3>Analiz</h3>
+                <p>Teorik Eğitim</p>
+            </div>
         </section>
 
         <footer class="footer">
-            <p>&copy; 2026 Büşra Ay - engineered across disciplines</p>
+            <p>© 2026 Marmara Üniversitesi Teknoloji Fakültesi | Web Lab Flexbox Ödevi</p>
         </footer>
 
     </div>
-
 </body>
 </html>
